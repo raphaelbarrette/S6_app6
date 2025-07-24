@@ -10,7 +10,7 @@
 #include <PubSubClient.h>
 
 // === Configuration Wi-Fi ===
-const char* ssid = "860-Short-5G";
+const char* ssid = "860-Short-2G";
 const char* password = "DatteNoir75";
 
 // === Configuration MQTT ===
