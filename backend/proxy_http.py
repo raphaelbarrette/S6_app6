@@ -5,15 +5,17 @@ import json
 
 app = FastAPI()
 
+COAP_SERVER_IP = "172.16.11.117"
+
 async def coap_get(path):
     context = await Context.create_client_context()
-    request = Message(code=Code.GET, uri=f"coap://127.0.0.1/{path}")
+    request = Message(code=Code.GET, uri=f"coap://{COAP_SERVER_IP}/{path}")
     response = await context.request(request).response
     return response.payload.decode()
 
 async def coap_post(path, payload):
     context = await Context.create_client_context()
-    request = Message(code=Code.POST, uri=f"coap://127.0.0.1/{path}", payload=json.dumps(payload).encode())
+    request = Message(code=Code.POST, uri=f"coap://{COAP_SERVER_IP}/{path}", payload=json.dumps(payload).encode())
     response = await context.request(request).response
 
     print("Raw CoAP Response:", response.payload)
