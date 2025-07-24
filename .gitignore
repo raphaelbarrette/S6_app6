@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+env/
+
+# Node.js
+node_modules/
+
+# Logs
+*.log
+
+# Env variables
+.env
+
+# Build / distribution
+build/
+dist/
+
+# Data runtime
+backend/data/events.json
+backend/data/led_state.json
+
+# IDE files
+.vscode/
+.idea/
+.DS_Store
