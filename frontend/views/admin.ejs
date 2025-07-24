@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Interface Admin - GeoForce</title>
+    <style>
+      body {
+        font-family: Arial;
+        padding: 20px;
+      }
+      h1 {
+        margin-bottom: 10px;
+      }
+      .led-controls {
+        margin: 20px 0;
+      }
+      button {
+        padding: 10px 20px;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Contrôle LED</h1>
+    <p>État actuel : <strong><%= ledState %></strong></p>
+    <form method="POST" action="/led" class="led-controls">
+      <button type="submit" name="state" value="on">Allumer</button>
+      <button type="submit" name="state" value="off">Éteindre</button>
+    </form>
+
+    <h2>Derniers événements</h2>
+    <ul>
+      <% events.forEach(function(e) { %>
+      <li><strong><%= e.event %></strong> — <%= e.uuid %> à <%= e.iso %></li>
+      <% }) %>
+    </ul>
+  </body>
+</html>
