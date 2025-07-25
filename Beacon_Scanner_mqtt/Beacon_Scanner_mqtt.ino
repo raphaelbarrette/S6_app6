@@ -10,11 +10,11 @@
 #include <PubSubClient.h>
 
 // === Configuration Wi-Fi ===
-const char* ssid = "860-Short-2G";
-const char* password = "DatteNoir75";
+const char* ssid = "anto-22s";
+const char* password = "00dadafafa";
 
 // === Configuration MQTT ===
-const char* mqtt_server = "172.16.11.117"; // Adresse IP du broker Mosquitto
+const char* mqtt_server = "192.168.68.65"; // Adresse IP du broker Mosquitto
 const int mqtt_port = 1883;
 const char* mqtt_topic = "test/topic";
 
