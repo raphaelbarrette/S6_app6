@@ -75,7 +75,7 @@ async def main():
     root.add_resource(['event'], EventResource())
     root.add_resource(['led'], LEDResource())
 
-    context = await Context.create_server_context(root, bind=('0.0.0.0', 5683))
+    context = await Context.create_server_context(root, bind=('10.0.0.115', 5683))
     print("Serveur CoAP actif sur coap://0.0.0.0:{event,led}")
 
     await asyncio.get_running_loop().create_future()

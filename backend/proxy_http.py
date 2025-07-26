@@ -5,7 +5,7 @@ import json
 
 app = FastAPI()
 
-COAP_SERVER_IP = "172.16.11.117"
+COAP_SERVER_IP = "10.0.0.115"
 
 async def coap_get(path):
     context = await Context.create_client_context()
