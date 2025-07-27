@@ -5,7 +5,7 @@ import os
 
 app = FastAPI()
 
-MQTT_BROKER_IP = "172.16.11.117"  # IP du broker MQTT (ex: Mosquitto)
+MQTT_BROKER_IP = "192.168.68.65"  # IP du broker MQTT (ex: Mosquitto)
 MQTT_BROKER_PORT = 1883
 
 MQTT_TOPIC_LED = "geoforce/led"

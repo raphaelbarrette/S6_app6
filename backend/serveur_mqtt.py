@@ -50,5 +50,5 @@ client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
 
-client.connect("172.16.11.117", 1883)
+client.connect("192.168.68.65", 1883)
 client.loop_forever()
