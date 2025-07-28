@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-const LED_API_URL = 'http://192.168.68.65:8000/led';
+const LED_API_URL = 'http://192.168.43.187:8000/led';
 const EVENTS_FILE = path.join(__dirname, '../backend/data/events.json');
 
 app.get('/', async (req, res) => {
@@ -28,7 +28,7 @@ app.get('/', async (req, res) => {
     }
 
     try {
-        const responseEvents = await axios.get('http:/192.168.68.65:8000/events');
+        const responseEvents = await axios.get('http:/192.168.43.187:8001/events');
 
         events = responseEvents.data.reverse();
     } catch (err) {

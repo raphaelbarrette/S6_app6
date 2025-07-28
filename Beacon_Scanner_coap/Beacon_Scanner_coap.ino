@@ -9,8 +9,8 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
 
-const char* ssid = "anto-22s";
-const char* password = "00dadafafa";
+const char* ssid = "emilehuawei";
+const char* password = "cacacaca";
 
 std::map<std::string, unsigned long> beaconLastSeen;
 std::set<std::string> beaconsPresent;
@@ -94,10 +94,11 @@ void sendEvent(const std::string &uuid, const String &eventType) {
   }
 
   HTTPClient http;
-  http.begin("http://192.168.68.65:8000/event");
+  http.begin("http://192.168.43.187:8000/event");
   http.addHeader("Content-Type", "application/json");
 
-  String payload = "{\"uuid\":\"" + String(uuid.c_str()) + "\",\"event\":\"" + eventType + "\",\"timestamp\":" + String(millis()) + "}";
+  String payload = "{\"uuid\":\"" + String(uuid.c_str()) + "\",\"event\":\"" + eventType + "\"}"; 
+
   Serial.println("Sending HTTP payload: " + payload);
 
   int httpResponseCode = http.POST(payload);
@@ -132,7 +133,7 @@ void checkLEDState() {
   if (WiFi.status() != WL_CONNECTED) return;
 
   HTTPClient http;
-  http.begin("http://192.168.68.65:8000/led");
+  http.begin("http://192.168.43.187:8000/led");
   int httpCode = http.GET();
 
   if (httpCode == 200) {
